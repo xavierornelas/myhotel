@@ -8,4 +8,5 @@ public interface IReservationService {
     Reservation addReservation(Reservation reservation);
     Set<Reservation> getAllReservation();
     Reservation updateReservation(Reservation reservation);
+    Boolean deleteReservation(Reservation reservation);
 }

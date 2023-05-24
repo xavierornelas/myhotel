@@ -24,4 +24,9 @@ public class IReservationRepositoryImp implements IReservationRepository{
     public Boolean update(Reservation reservation) {
         return HotelDB.persistData.add(reservation);
     }
+
+    @Override
+    public Boolean remove(Reservation reservation) {
+        return HotelDB.persistData.remove(reservation);
+    }
 }

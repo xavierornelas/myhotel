@@ -8,4 +8,5 @@ public interface IReservationRepository {
     Boolean save(Reservation reservation);
     Set<Reservation> getAll();
     Boolean update(Reservation reservation);
+    Boolean remove(Reservation reservation);
 }
