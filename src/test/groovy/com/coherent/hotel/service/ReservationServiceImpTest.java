@@ -1,6 +1,7 @@
 package com.coherent.hotel.service;
 
 import com.coherent.hotel.entity.Reservation;
+import com.coherent.hotel.registry.HotelDB;
 import com.coherent.hotel.repository.IReservationRepositoryImp;
 import org.junit.jupiter.api.Test;
 
@@ -24,5 +25,16 @@ class ReservationServiceImpTest {
                 .reservationDates(List.of(LocalDate.of(2023,05,01),LocalDate.of(2023,05,15)))
                 .build();
         assertEquals(reservationServiceImp.addReservation(reservation),reservation);
+    }
+
+    @Test
+    void getAllReservation() {
+        HotelDB.persistData.add(Reservation.builder()
+                .id(1)
+                .clientFullName("Francisco Ornelas")
+                .roomNumber(3)
+                .reservationDates(List.of(LocalDate.of(2023,05,01),LocalDate.of(2023,05,15)))
+                .build());
+        assertEquals(reservationServiceImp.getAllReservation(),HotelDB.persistData);
     }
 }

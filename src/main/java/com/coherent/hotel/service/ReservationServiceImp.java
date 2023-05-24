@@ -32,7 +32,8 @@ public class ReservationServiceImp implements IReservationService{
 
     @Override
     public Set<Reservation> getAllReservation() {
-        return null;
+        log.info("Returning reservation list: {}",HotelDB.persistData);
+        return HotelDB.persistData;
     }
 
     @Override
