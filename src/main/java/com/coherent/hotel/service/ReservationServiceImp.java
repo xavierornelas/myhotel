@@ -2,7 +2,6 @@ package com.coherent.hotel.service;
 
 import com.coherent.hotel.entity.Reservation;
 import com.coherent.hotel.exception.ReservationNotFound;
-import com.coherent.hotel.registry.HotelDB;
 import com.coherent.hotel.repository.IReservationRepositoryImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +27,13 @@ public class ReservationServiceImp implements IReservationService{
     public Reservation addReservation(Reservation reservation) {
         log.info("Adding reservation: {}",reservation);
         iReservationRepositoryImp.save(reservation);
-        log.info("Printing Set: {}", HotelDB.persistData);
+        log.info("Printing Set: {}", getAllReservation());
         return reservation;
     }
 
     @Override
     public Set<Reservation> getAllReservation() {
-        log.info("Returning reservation list: {}",HotelDB.persistData);
+        log.info("Returning reservation list");
         return iReservationRepositoryImp.getAll();
     }
 
@@ -59,7 +58,7 @@ public class ReservationServiceImp implements IReservationService{
     }
 
     private Reservation findReservationById(Integer id) throws ReservationNotFound{
-        Optional<Reservation> result = HotelDB.persistData.stream()
+        Optional<Reservation> result = getAllReservation().stream()
                 .filter(item -> item.getId() == id)
                 .findFirst();
         if(!result.isPresent())

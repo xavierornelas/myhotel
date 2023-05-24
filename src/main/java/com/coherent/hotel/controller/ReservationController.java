@@ -22,4 +22,9 @@ public class ReservationController {
     public ResponseEntity<Reservation>getListReservation(){
         return new ResponseEntity(this.iReservationService.getAllReservation(), HttpStatus.OK);
     }
+
+    @PutMapping("updatereservation")
+    public ResponseEntity<Reservation>updateReservation(@RequestBody Reservation reservation){
+        return new ResponseEntity(this.iReservationService.updateReservation(reservation), HttpStatus.OK);
+    }
 }
