@@ -18,4 +18,8 @@ public class ReservationController {
         return new ResponseEntity(this.iReservationService.addReservation(reservation), HttpStatus.CREATED);
     }
 
+    @GetMapping("totalreservation")
+    public ResponseEntity<Reservation>getListReservation(){
+        return new ResponseEntity(this.iReservationService.getAllReservation(), HttpStatus.OK);
+    }
 }

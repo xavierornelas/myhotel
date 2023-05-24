@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "eac3b5bc-3c99-41fe-bd21-ae42f0ea412e",
+		"_postman_id": "32f9dd3b-b9c2-42d0-ac97-c3785eb74040",
 		"name": "Hotel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24494888"
@@ -27,6 +27,23 @@
 					],
 					"path": [
 						"reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of reservation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}{{path}}/totalreservation",
+					"host": [
+						"{{domain}}{{path}}"
+					],
+					"path": [
+						"totalreservation"
 					]
 				}
 			},
