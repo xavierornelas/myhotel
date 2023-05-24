@@ -48,6 +48,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "update reservation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"clientFullName\": \"Paco\",\n    \"roomNumber\": 2,\n    \"reservationDates\": [\n        \"2023-05-23\",\n        \"2023-06-23\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}{{path}}/updatereservation",
+					"host": [
+						"{{domain}}{{path}}"
+					],
+					"path": [
+						"updatereservation"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
